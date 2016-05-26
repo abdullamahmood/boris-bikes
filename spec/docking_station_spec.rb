@@ -2,6 +2,7 @@ require 'docking_station'
 
 describe DockingStation do
 
+	let (:bike)  {double :bike}
 	subject { DockingStation.new }
 
 	it 'responds to release_bike' do
@@ -18,14 +19,14 @@ describe DockingStation do
 	end
 
 	it 'checks if a bike is docked' do
-		bike = Bike.new
+		bike
 		subject.dock(bike)
 		expect(subject.working_bikes[-1]).to eq bike
 	end
 
 	describe "#release_bike releases a bike" do
 		it 'releases a bike' do
-			bike = Bike.new
+			bike
 			subject.dock(bike)
 			expect(subject.release_bike).to eq bike
 		end
@@ -34,7 +35,8 @@ describe DockingStation do
 		end
 
 		it 'does not releases when bike is broken' do
-			b_bike = Bike.new.broken
+			b_bike = bike
+			b_bike.broken
 			subject.dock(b_bike)
 			expect{subject.release_bike}.to raise_error('No workings bikes available')
 		end
@@ -44,13 +46,13 @@ describe DockingStation do
 
 	describe '#dock(bike) docks a bike' do
 		it 'docks a bike' do
-			bike = Bike.new
+			bike
 			expect(subject.dock(bike)).to eq [bike]
 		end
 		it 'raises an error message if we add a bike to a full docking station (20 bikes capacity)' do
 			default_size_of_dock = DockingStation::DEFAULT_CAPACITY # In order to retrieve a constant from a class you must ask the class, like this Class::CONSTANT (not an instance of the class, that's why simply doing "subject.DEFAULT_CAPACITY" or "subject::DEFAULT_CAPACITY" did not work)
-			default_size_of_dock.times {subject.dock(Bike.new)} # First add 20 bikes, then add another and watch the world burn
-			expect{subject.dock(Bike.new)}.to raise_error('Docking station is full')
+			default_size_of_dock.times {subject.dock(bike)} # First add 20 bikes, then add another and watch the world burn
+			expect{subject.dock(bike)}.to raise_error('Docking station is full')
 		end
 
 	end
