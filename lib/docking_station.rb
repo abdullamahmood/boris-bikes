@@ -6,11 +6,11 @@ attr_reader :capacity
 DEFAULT_CAPACITY = 20
 
   def initialize(capacity = DEFAULT_CAPACITY)
-    @bikes = Array.new
     @capacity = capacity
   end
 
   attr_reader :bike
+
 
   def release_bike
     raise 'No mo bikes' if empty?

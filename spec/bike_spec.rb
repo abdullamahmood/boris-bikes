@@ -1,13 +1,22 @@
 require 'bike'
 
 describe Bike  do
-<<<<<<< HEAD
+subject(:bike) {described_class.new}
+
 
 it { should respond_to :working?}
-=======
 
-  it { should respond_to :working?}
->>>>>>> 3147d1bbb5701ba5a0416a0c77d74dc26df2e322
+it { should respond_to :break}
+
+
+it 'the bike can be broken' do
+	bike.working = false
+	expect(bike.working?).to eq false
+end	
+# it 'check if the bike is working' do
+# expect(subject.working?).to eq true
+
+
 
 # it 'should recognize a broken bike' do
 # expect(subject.broken).to eq true
