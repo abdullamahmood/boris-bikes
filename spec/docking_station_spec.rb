@@ -33,10 +33,10 @@ subject(:docking_station) {described_class.new}
       expect {docking_station.dock(Bike.new)}.to raise_error "No mo slots"
     end
 
-    it 'docks a bike' do
-      bike = Bike.new
-      expect(docking_station.dock(bike)).to eq bike
-    end
+    # it 'docks a bike' do
+    #   bike = Bike.new
+    #   expect(docking_station.dock(bike)).to eq bike
+    # end
 
   # end
 
@@ -60,9 +60,10 @@ subject(:docking_station) {described_class.new}
     expect(docking_station2.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
-   it 'allows a user to report a broken bike when returning it' do
-    expect(docking_station.dock(bike(broken)).to
-  end
+   # it 'allows a user to report a broken bike when returning it' do
+
+   # 	expect(docking_station.dock()).to eq 
+  # end
 
 
   end
