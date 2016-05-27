@@ -5,7 +5,7 @@ subject(:docking_station) {described_class.new}
 
  it {should respond_to :release_bike}
  it {should respond_to(:dock).with(1).argument}
- it {should respond_to :bike}
+ # it {should respond_to :bike}
 
   describe '#release_bike' do
 
@@ -46,13 +46,13 @@ subject(:docking_station) {described_class.new}
   #     subject.dock(bike)
   #     expect(docking_station.bike).to eq bike
    # end
-   it 'initializes with a default value of 20' do
-    expect(docking_station.capacity).to eq 20
-    end
+   # it 'initializes with a default value of 20' do
+   #  expect(docking_station.capacity).to eq 20
+   #  end
 
-   it 'has a default capacity' do
-    expect(docking_station.capacity).to eq DockingStation::DEFAULT_CAPACITY
-   end
+   # it 'has a default capacity' do
+   #  expect(docking_station.capacity).to eq DockingStation::DEFAULT_CAPACITY
+   # end
 
    it 'initilizes with the same default capacity as DEFAULT_CAPACITY' do
     DockingStation::DEFAULT_CAPACITY = 15

@@ -1,7 +1,8 @@
 require_relative 'bike'
 
 class DockingStation
-attr_reader :capacity
+attr_reader :bikes
+
 
 DEFAULT_CAPACITY = 20
 
@@ -9,8 +10,6 @@ DEFAULT_CAPACITY = 20
     @capacity = capacity
     @bikes = Array.new
   end
-
-  attr_reader :bike
 
 
   def release_bike
