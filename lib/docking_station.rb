@@ -7,6 +7,7 @@ DEFAULT_CAPACITY = 20
 
   def initialize(capacity = DEFAULT_CAPACITY)
     @capacity = capacity
+    @bikes = Array.new
   end
 
   attr_reader :bike
