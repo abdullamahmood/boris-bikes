@@ -22,8 +22,8 @@ DEFAULT_CAPACITY = 20
     @bikes << @bike
   end
 
-  def report_broken_bike
-  end
+  # def report_broken_bike
+  # end
 
 private
 

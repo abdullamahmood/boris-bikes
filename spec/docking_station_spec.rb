@@ -60,12 +60,18 @@ subject(:docking_station) {described_class.new}
     expect(docking_station2.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
+<<<<<<< HEAD
    # it 'allows a user to report a broken bike when returning it' do
 
    # 	expect(docking_station.dock()).to eq 
   # end
 
+=======
+  #  it 'allows a user to report a broken bike when returning it' do
+  #   expect(docking_station.dock(bike(broken)).to
+  # end
+>>>>>>> 668a3f804317a483ad8e8797522a9c4531424b01
 
-  end
+end
 
 end
